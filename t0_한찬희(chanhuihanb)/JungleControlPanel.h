@@ -21,9 +21,6 @@ char fovStr[32] = "";
 FVector3 cameraLocation = { -1.037f, 0.716f, 0.330f };
 FVector3 cameraRotation = { 0.680f, 1.970f, 0.000f };
 
-FVector3 objectTranslation = { -0.140f, 0.030f, 0.000f };
-FVector3 objectRotation = { 0.0f, 0.0f, 0.0f };
-FVector3 objectScale = { 1.0f, 1.0f, 1.0f };
 
 
 char numToStr[32] = "";
@@ -153,10 +150,7 @@ void ShowExampleControlPanel() {
     ImGui::Button("Rotation", ImVec2(105, 25));
     ImGui::SameLine();
     ImGui::Button("Scale", ImVec2(105, 25));
-    ImGui::SameLine();
 
 
     ImGui::End();
-
-    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 }
