@@ -23,21 +23,12 @@
 #include <vector>
 #include "Console.h"
 #include "jsonExample.h"
+#include "JungleControlPanel.h"
 
-// 1. Define the triangle vertices
-struct FVertexSimple
-{
-    float x, y, z;    // Position
-    float r, g, b, a; // Color
-};
+#include <cmath>
 
-// Structure for a 3D vector
-struct FVector3
-{
-    float x, y, z;
-    FVector3(float _x = 0, float _y = 0, float _z = 0) : x(_x), y(_y), z(_z) {}
-};
 
+#include "Utils.h"
 // �ﰢ���� �ϵ� �ڵ�
 FVertexSimple triangle_vertices[] =
 {
@@ -98,7 +89,6 @@ FVertexSimple cube_vertices[] =
 };
 
 #include "Sphere.h"
-
 
 
 class URenderer
@@ -1065,9 +1055,6 @@ void HandleBallEditorInput(UBallManager& ballManager, HWND hWnd)
 
 
 
-
-
-
 extern LRESULT ImGui_ImplWin32_WndProcHandler(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam);
 
 // ���� �޽����� ó���� �Լ�
@@ -1182,6 +1169,10 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
         ShowExampleAppConsole(&showConsole);
 
+        ShowExampleControlPanel();
+
+
+        
         ImGui::Begin("Jungle Property Window");
 
         // Ŭ���� �νĵǸ�  PlacementFailureMessage �޽��� â�� ����
